@@ -1,0 +1,17 @@
+{
+  "name": "faker-mys-ui",
+  "version": "1.0.0",
+  "description": "Faker",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "faker"
+  ],
+  "author": "WebServe",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.2"
+  }
+}
