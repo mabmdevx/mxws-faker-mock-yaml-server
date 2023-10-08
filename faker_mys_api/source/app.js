@@ -80,7 +80,7 @@ app.route('/api2/status').get(getStatus);
 
 app.get('/api2/resources/files', (req, res) => {
 
-    const directoryPath = path.join(__dirname, process.env.MYS_RESOURCES_PATH);
+    const directoryPath = process.env.MYS_RESOURCES_PATH;
 
     const mysResources = [];
 
@@ -110,7 +110,7 @@ app.post('/api2/resources/upload', (req, res) => {
     form.parse(req, function (err, fields, files) {
 
       var oldpath = files.resource_file[0].filepath;
-      var newpath = '../../mock_yaml_server/resources/' + files.resource_file[0].originalFilename;
+      var newpath = process.env.MYS_RESOURCES_PATH + "/" + files.resource_file[0].originalFilename;
       
       fs.rename(oldpath, newpath, function (err) {
         if (err) throw err;
