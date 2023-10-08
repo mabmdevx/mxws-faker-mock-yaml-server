@@ -23,6 +23,9 @@ WORKDIR /usr/src/app
 # Copy the app
 COPY source/ /usr/src/app
 
+# COPY the mock-yaml-server sample file
+COPY config/mock_yaml_server_sample/ /
+
 # Copy the container init script
 COPY ./docker_container_init.sh /
 
