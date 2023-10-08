@@ -42,11 +42,12 @@ node_version=$(sed s/v// source/.node-version)
 docker_name="$name"
 tarfile="${name}.tar.gz"
 timestamp=$(date +'%Y/%m/%d %H:%M:%S')
+domain_name="faker.webserve.xyz"
 
-## Check if command line parameter ssl_cert_path has been set, if not assign default value
-#if [ -z "${ssl_cert_path-}" ] ; then
-#  ssl_cert_path="/opt/minica/minica/xyz.com"
-#fi
+# Check if command line parameter ssl_cert_path has been set, if not assign default value
+if [ -z "${ssl_cert_path-}" ] ; then
+  ssl_cert_path="/opt/minica/minica/$domain_name"
+fi
 
 # Check if command line parameter docker_image_tag has been set, if not assign default value
 if [ -z "${docker_image_tag-}" ] ; then
@@ -54,12 +55,12 @@ if [ -z "${docker_image_tag-}" ] ; then
 fi
 
 # Copy certificate to build context folder
-#cp -a $ssl_cert_path/. ./config/certs/
+cp -a $ssl_cert_path/. ./config/certs/
 
 echo "Build Docker Image: $docker_name"
 echo "App Version: $app_version"
 echo "Node Version: $node_version"
-#echo "SSL Certificate Path: $ssl_cert_path"
+echo "SSL Certificate Path: $ssl_cert_path"
 echo "Docker Image Tag: $docker_image_tag"
 
 # Build Docker Image

@@ -14,7 +14,7 @@ WORKDIR /var/www/html
 COPY ./config/nginx/default.conf /etc/nginx/conf.d/
 
 # Copy the app
-COPY ./sourcce/build /var/www/html/
+COPY ./source/public /var/www/html/
 
 # Expose the required ports
 EXPOSE 3010
