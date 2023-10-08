@@ -27,7 +27,7 @@ RUN npm install -g mock-yaml-server
 RUN mkdir -p /usr/src/resources
 
 # COPY the mock-yaml-server sample file
-COPY ./mys_resources/users.yaml /usrc/src/resources
+COPY ./mys_resources/users.yaml /usr/src/resources
 
 # Copy the container init script
 COPY ./docker_container_init.sh /
