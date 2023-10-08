@@ -34,9 +34,7 @@ while getopts ":c:t:" opt; do
 done
 
 # Params
-app="faker_mys"
-component="ui"
-name="${app}_${component}"
+name="faker_mys_ui"
 app_version=$(cat source/public/app_version.json | jq '.["app_version"]' -r)
 node_version=$(sed s/v// source/.node-version)
 docker_name="$name"
