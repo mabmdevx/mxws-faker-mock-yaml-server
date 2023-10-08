@@ -33,10 +33,12 @@ RUN chmod +x /docker_container_init.sh
 RUN echo ${app_version} > /usr/src/app/version.txt
 
 # Expose the required ports
-## For API
+## For API without SSL
 EXPOSE 8080
-## For Mock YAML Server
+## For Mock YAML Server without SSL
 EXPOSE 3000
+# For SSL
+EXPOSE 443
 
 # Set start command
 ENTRYPOINT /docker_container_init.sh

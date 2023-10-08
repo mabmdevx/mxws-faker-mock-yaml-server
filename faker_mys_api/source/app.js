@@ -11,7 +11,7 @@ logger.info(`NODE_ENV: ${process.env.NODE_ENV}`);
 logger.info(`process.env.TZ: ${process.env.TZ}`);
 
 const app = express();
-const port = process.env.PORT_API || 8080;
+const port = process.env.PORT || 8080;
 
 app.use(
     responseTime((req, res, time) => {

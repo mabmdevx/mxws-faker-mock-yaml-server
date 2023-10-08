@@ -17,7 +17,10 @@ COPY ./config/nginx/default.conf /etc/nginx/conf.d/
 COPY ./source/public /var/www/html/
 
 # Expose the required ports
+## For UI without SSL
 EXPOSE 3010
+## For UI with SSL
+EXPOSE 443
 
 # Start NGINX
 ENTRYPOINT [ "nginx", "-g", "daemon off;" ]
