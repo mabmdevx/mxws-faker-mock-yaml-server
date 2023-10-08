@@ -2,7 +2,7 @@
 
 # Start Node Application
 echo -e "\nStarting the Mock YAML Server ...\n"
-mock-yaml-server
+mock-yaml-server &
 echo -e "\nDone"
 
 # Start Node Application
