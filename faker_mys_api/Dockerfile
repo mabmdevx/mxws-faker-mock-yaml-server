@@ -20,6 +20,9 @@ WORKDIR /usr/src/app
 # Copy the app
 COPY source/ /usr/src/app
 
+# Install NPM Modules for the app
+RUN npm install
+
 # Install mock-yaml-server as global inside the container
 RUN npm install -g mock-yaml-server
 
