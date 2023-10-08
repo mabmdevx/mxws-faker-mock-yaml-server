@@ -80,7 +80,7 @@ app.route('/api2/status').get(getStatus);
 
 app.get('/api2/resources/files', (req, res) => {
 
-    const directoryPath = path.join(__dirname, '../../mock_yaml_server/resources');
+    const directoryPath = path.join(__dirname, process.env.MYS_RESOURCES_PATH);
 
     const mysResources = [];
 
