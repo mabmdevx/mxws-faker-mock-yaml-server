@@ -11,9 +11,6 @@ LABEL app_version=${app_version}
 # Install Nginx
 RUN apt-get update && apt-get install -y nginx
 
-# Install mock-yaml-server as global inside the container
-RUN npm install -g mock-yaml-server
-
 # Create a new folder for the application
 RUN mkdir -p /usr/src/app
 
@@ -23,8 +20,14 @@ WORKDIR /usr/src/app
 # Copy the app
 COPY source/ /usr/src/app
 
+# Install mock-yaml-server as global inside the container
+RUN npm install -g mock-yaml-server
+
+# Create a new folder for the MYS Resources
+RUN mkdir -p /usr/src/resources
+
 # COPY the mock-yaml-server sample file
-COPY ./config/mock_yaml_server_sample/users.yaml /
+COPY ./mys_resources/users.yaml /usrc/src/resources
 
 # Copy the container init script
 COPY ./docker_container_init.sh /
