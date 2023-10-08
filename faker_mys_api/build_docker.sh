@@ -37,7 +37,7 @@ done
 app="faker_mys"
 component="api"
 name="${app}_${component}"
-app_version=$(cat source/src/app_version.json | jq '.["app_version"]' -r)
+app_version=$(cat source/app_version.json | jq '.["app_version"]' -r)
 node_version=$(sed s/v// source/.node-version)
 docker_name="$name"
 tarfile="${name}.tar.gz"
