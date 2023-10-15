@@ -1,5 +1,5 @@
 #!/bin/bash
-# Usage: ./build_docker.sh
+# Usage: ./docker_build.sh
 set -u
 set -e
 set -o pipefail
