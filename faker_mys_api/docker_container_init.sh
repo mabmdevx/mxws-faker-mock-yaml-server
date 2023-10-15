@@ -8,6 +8,7 @@ echo -e "\nDone"
 
 # Start Node Application
 echo -e "\nStarting the Node Application ...\n"
+cp env.template .env
 node app.js &
 echo -e "\nDone"
 
