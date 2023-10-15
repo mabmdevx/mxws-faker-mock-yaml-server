@@ -6,4 +6,4 @@ name="faker_mys_api"
 
 #docker run -p 8080:8080 -p 3000:3000 -d $name # Non-SSL
 
-docker run -p 8080:443 -p 3000:3000 -d $name # SSL
+docker run -p 8080:8080 -p 8480:443 -p 3000:3000 -d $name # SSL
