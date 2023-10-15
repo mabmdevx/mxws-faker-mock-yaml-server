@@ -9,7 +9,8 @@ const cors = require('cors');
 
 logger.info('App launching...');
 logger.info(`NODE_ENV: ${process.env.NODE_ENV}`);
-logger.info(`process.env.TZ: ${process.env.TZ}`);
+logger.info(`Timezone: ${process.env.TZ}`);
+logger.info(`MYS_RESOURCES_PATH: ${process.env.MYS_RESOURCES_PATH}`);
 
 const app = express();
 const port = process.env.PORT || 8080;
