@@ -19,6 +19,7 @@
         <script data-search-pseudo-elements defer src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/js/all.min.js" crossorigin="anonymous"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/feather-icons/4.27.0/feather.min.js" crossorigin="anonymous"></script>
         <link rel="stylesheet" href="assets/js/jquery-ui/jquery-ui-1.11.4/jquery-ui.css" />
+
     </head>
     <body class="nav-fixed">
         <nav class="topnav navbar navbar-expand shadow navbar-light bg-white" id="sidenavAccordion">
@@ -50,7 +51,7 @@
                             <div class="sidenav-menu-heading" >
 
                                 <i data-feather="folder"></i>&nbsp;&nbsp;Resources</div>
-                                <form action="http://localhost:8080/api2/resources/upload" method="post" enctype="multipart/form-data">
+                                <form id="form-resource-upload" action="/api2/resources/upload" method="post" enctype="multipart/form-data">
                                     <div class="col-md-3 small" style="float: left;">
                                         <input type="file"  class="btn btn-cyan btn-sm" id="resource_file" name="resource_file" />
                                     </div>
@@ -74,7 +75,7 @@
             <div id="layoutSidenav_content">
                 <main style="height: 100%;">
                     <div style="margin:0px; padding:0px; overflow-x: hidden; overflow-y:hidden; height: 100%;">
-                        <iframe src="http://localhost:3000/api-docs" height="100%" width="100%" frameborder="0"></iframe>
+                        <iframe id="iframe-api-docs" src="/api-docs" height="100%" width="100%" frameborder="0"></iframe>
                     </div>
                 </main>
                 <footer class="footer mt-auto footer-light">
