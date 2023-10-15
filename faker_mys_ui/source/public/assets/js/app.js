@@ -1,5 +1,29 @@
-$(document).ready(function() {
+function display_resource_files_list(url_api_resource_files){
     
+    $.getJSON(url_api_resource_files, function (data) {
+        
+        let file_list_html = '';
+
+        console.log("File List: ", data);
+
+        $.each(data, function (index, value) {
+            file_list_html += `<a class="nav-link collapsed" href="#" style="color: #a7aeb8;">
+                                    <i data-feather="file"></i>&nbsp;${value}
+                                </a>`;
+        });
+
+        file_list_html = $.parseHTML(file_list_html);
+
+        $("#div_file_list").html(file_list_html);
+
+        // Activate Feather icons
+        feather.replace();
+
+    });
+}
+
+$(document).ready(function() {
+
     // Set URL for API Docs
     let url_api_resource_files = "/api2/resources/files";
     let url_mys_api_docs = "/api-docs";
@@ -70,28 +94,13 @@ $(document).ready(function() {
             }
         });
 
+        // Display the Resource File List
+        display_resource_files_list(url_api_resource_files);
+
     });
 
     // Display the Resource File List
-    $.getJSON(url_api_resource_files, function (data) {
-        
-        let file_list_html = '';
-
-        console.log("File List: ", data);
-
-        $.each(data, function (index, value) {
-            file_list_html += `<a class="nav-link collapsed" href="#" style="color: #a7aeb8;">
-                                    <i data-feather="file"></i>&nbsp;${value}
-                                </a>`;
-        });
-
-        file_list_html = $.parseHTML(file_list_html);
-
-        $("#div_file_list").html(file_list_html);
-
-        // Activate Feather icons
-        feather.replace();
-
-    });
+    display_resource_files_list(url_api_resource_files);
 
 });
+
