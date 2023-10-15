@@ -54,22 +54,23 @@
                             <div class="sidenav-menu-heading" >
 
                                 <i data-feather="folder"></i>&nbsp;&nbsp;Resources</div>
-                                <form id="form-resource-upload" action="/api2/resources/upload" method="post" enctype="multipart/form-data">
+                                <form id="form_resource_upload" method="POST" enctype="multipart/form-data">
                                     <div class="col-md-3 small" style="float: left;">
                                         <input type="file"  class="btn btn-cyan btn-sm" id="resource_file" name="resource_file" />
                                     </div>
                                     <div class="col-md-2 small" style="float: right;margin-right: 5px; margin-top:5px">
-                                        <button type="submit" class="btn btn-outline-dark btn-icon btn-sm" name="Upload" value="Upload" style="width: 99%;" >
+                                        <button id="btn_resource_file_upload" type="submit" class="btn btn-outline-dark btn-icon btn-sm" name="Upload" value="Upload" style="width: 99%;" >
                                             <i data-feather="upload"></i>
                                         </button>
                                     </div>
                                 </form>
-                                <a class="nav-link collapsed" href="#" style="color: #a7aeb8;">
-                                    <i data-feather="file"></i>&nbsp;users.yaml
-                                </a>
-                                <a class="nav-link collapsed" href="#" style="color: #a7aeb8;">
-                                    <i data-feather="file"></i>&nbsp;emails.yaml
-                                </a>
+                                <div id="div_file_list">
+                                    <!--
+                                    <a class="nav-link collapsed" href="#" style="color: #a7aeb8;">
+                                        <i data-feather="file"></i>&nbsp;users1.yaml
+                                    </a>
+                                    -->
+                                </div>
                             
                         </div>
                     </div>
@@ -97,6 +98,7 @@
         <script src="https://code.jquery.com/jquery-3.5.1.min.js" crossorigin="anonymous"></script>
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
         <script src="assets/js/scripts.js"></script>
+        <script src="assets/js/app.js"></script>
         <script src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js" crossorigin="anonymous"></script>
         <script src="https://cdn.datatables.net/1.10.20/js/dataTables.bootstrap4.min.js" crossorigin="anonymous"></script>
         <script src="assets/js/jquery-ui/jquery-ui-1.11.4/jquery-ui.js"></script>

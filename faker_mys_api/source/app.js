@@ -5,6 +5,7 @@ const logger = require('./helpers/logger');
 const path = require('path');
 const fs = require('fs');
 const formidable = require('formidable');
+const cors = require('cors');
 
 logger.info('App launching...');
 logger.info(`NODE_ENV: ${process.env.NODE_ENV}`);
@@ -13,6 +14,7 @@ logger.info(`process.env.TZ: ${process.env.TZ}`);
 const app = express();
 const port = process.env.PORT || 8080;
 
+app.use(cors())
 app.use(
     responseTime((req, res, time) => {
         // Ignore health check
@@ -114,7 +116,9 @@ app.post('/api2/resources/upload', (req, res) => {
       
       fs.rename(oldpath, newpath, function (err) {
         if (err) throw err;
-        res.write('File uploaded!');
+        logger.info("File uploaded successfully to : " + newpath);
+        res.contentType('text/plain');
+        res.write('File uploaded : ' + files.resource_file[0].originalFilename);
         res.end();
       });
     

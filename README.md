@@ -8,7 +8,7 @@ Powered by: https://www.npmjs.com/package/mock-yaml-server
 -----------------------------
 # If global installation - Recommended
 npm install -g mock-yaml-server
-mock-yaml-server
+mock-yaml-server -f ./resources/
 
 # If local installation - Not recommended
 cd mock_yaml_server
