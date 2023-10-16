@@ -45,4 +45,12 @@ cd faker_mys_api
 ./docker_run.sh
 ```
 
+## 4. Reverse Proxy
+### For Production setup
+```
+#Copy the config/nginx/default configuration to your NGINX
+service nginx restart
+```
+
+
 
