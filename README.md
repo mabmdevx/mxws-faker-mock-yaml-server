@@ -45,8 +45,7 @@ cd faker_mys_api
 ./docker_run.sh
 ```
 
-## 4. Reverse Proxy
-### For Production setup
+## 4. Reverse Proxy and SSL Setup - For Production setup
 ```
 #Copy the config/nginx/default configuration to your NGINX
 sudo apt install certbot python3-certbot-nginx
