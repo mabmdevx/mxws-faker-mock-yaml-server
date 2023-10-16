@@ -18,7 +18,7 @@ node node_modules/mock-yaml-server/src/server.js -f ./resources/
 ## 2. Start the API
 ### For Local Setup - Runs on Port 8080 by default
 ```
-cd faker_mys_api
+cd faker_mys_api\source
 npm install
 node index.js
 ```
@@ -33,7 +33,7 @@ cd faker_mys_api
 ## 3. Start the UI
 ### For Local setup - Runs on Port 3020 by default
 ```
-cd faker_mys_ui
+cd faker_mys_ui\source
 npm install
 node index.js
 ```
@@ -50,7 +50,7 @@ cd faker_mys_api
 #Copy the config/nginx/default configuration to your NGINX
 sudo apt install certbot python3-certbot-nginx
 sudo certbot --nginx -d faker.xyz.com
-service nginx restart
+sudo service nginx restart
 ```
 
 
