@@ -24,7 +24,8 @@ node index.js
 ```
 ### For Production Setup - Runs on Port 8080 Non-SSL / Port 443 SSL by default
 ```
-./docker_clean.sh # If needed
+cd faker_mys_api
+./docker_clean.sh # If needed - For re-deploy
 ./docker_build.sh
 ./docker_run.sh
 ```
@@ -38,7 +39,8 @@ node index.js
 ```
 ### For Production setup - Runs on Port 3010 Non-SSL / Port 443 SSL on the docker container with NGINX directly without NodeJS Express Server
 ```
-./docker_clean.sh # If needed
+cd faker_mys_api
+./docker_clean.sh # If needed - For re-deploy
 ./docker_build.sh
 ./docker_run.sh
 ```
