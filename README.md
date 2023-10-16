@@ -49,6 +49,8 @@ cd faker_mys_api
 ### For Production setup
 ```
 #Copy the config/nginx/default configuration to your NGINX
+sudo apt install certbot python3-certbot-nginx
+sudo certbot --nginx -d faker.xyz.com
 service nginx restart
 ```
 
