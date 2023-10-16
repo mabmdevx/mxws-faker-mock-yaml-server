@@ -16,13 +16,18 @@ npm install
 node node_modules/mock-yaml-server/src/server.js -f ./resources/
 ```
 ## 2. Start the API
-### For Local Setup and Production Setup - Runs on Port 8080 by default
+### For Local Setup - Runs on Port 8080 by default
 ```
 cd faker_mys_api
 npm install
 node index.js
 ```
-### Production Setup - Runs on Port 8080 Non-SSL / Port 443 SSL by default
+### For Production Setup - Runs on Port 8080 Non-SSL / Port 443 SSL by default
+```
+./docker_clean.sh # If needed
+./docker_build.sh
+./docker_run.sh
+```
 
 ## 3. Start the UI
 ### For Local setup - Runs on Port 3020 by default
@@ -31,7 +36,11 @@ cd faker_mys_ui
 npm install
 node index.js
 ```
-#### For Production setup - Runs on Port 3010 Non-SSL / Port 443 SSL on the docker container with NGINX directly without NodeJS Express Server
-
+### For Production setup - Runs on Port 3010 Non-SSL / Port 443 SSL on the docker container with NGINX directly without NodeJS Express Server
+```
+./docker_clean.sh # If needed
+./docker_build.sh
+./docker_run.sh
+```
 
 
