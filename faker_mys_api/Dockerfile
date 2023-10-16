@@ -11,6 +11,9 @@ LABEL app_version=${app_version}
 # Install Nginx
 RUN apt-get update && apt-get install -y nginx
 
+# Copy Nginx ssl conf file
+COPY ./config/nginx/ssl.conf /etc/nginx/conf.d/
+
 # Create a new folder for the application
 RUN mkdir -p /usr/src/app
 

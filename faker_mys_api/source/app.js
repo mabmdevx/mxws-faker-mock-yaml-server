@@ -112,17 +112,19 @@ app.post('/api2/resources/upload', (req, res) => {
 
     form.parse(req, function (err, fields, files) {
 
-      var oldpath = files.resource_file[0].filepath;
-      var newpath = process.env.MYS_RESOURCES_PATH + "/" + files.resource_file[0].originalFilename;
-      
-      fs.rename(oldpath, newpath, function (err) {
-        if (err) throw err;
-        logger.info("File uploaded successfully to : " + newpath);
-        res.contentType('text/plain');
-        res.write('File uploaded : ' + files.resource_file[0].originalFilename);
-        res.end();
-      });
-    
+        if(files !== null && files.resource_file[0].filepath !== null){
+            var oldpath = files.resource_file[0].filepath;
+            var newpath = process.env.MYS_RESOURCES_PATH + "/" + files.resource_file[0].originalFilename;
+            
+            fs.rename(oldpath, newpath, function (err) {
+              if (err) throw err;
+              logger.info("File uploaded successfully to : " + newpath);
+              res.contentType('text/plain');
+              res.write('File uploaded : ' + files.resource_file[0].originalFilename);
+              res.end();
+            });
+        }
+
     });
 });
 

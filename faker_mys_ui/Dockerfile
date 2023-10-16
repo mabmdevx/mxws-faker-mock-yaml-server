@@ -10,8 +10,11 @@ LABEL app_version=${app_version}
 # Set working directory for the container
 WORKDIR /var/www/html
 
-# Copy Nginx conf file
+# Copy Nginx default conf file
 COPY ./config/nginx/default.conf /etc/nginx/conf.d/
+
+# Copy Nginx ssl conf file
+COPY ./config/nginx/ssl.conf /etc/nginx/conf.d/
 
 # Copy the app
 COPY ./source/public /var/www/html/
