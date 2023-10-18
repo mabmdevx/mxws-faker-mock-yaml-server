@@ -4,7 +4,7 @@
 echo -e "\nStarting the Mock YAML Server ...\n"
 domain_name="faker.webserve.xyz"
 npm install -g mock-yaml-server
-mock-yaml-server -f /usr/src/resources -s $domain_name &
+mock-yaml-server -f /usr/src/resources -s "$domain_name" &
 echo -e "\nDone"
 
 # Start Node Application
