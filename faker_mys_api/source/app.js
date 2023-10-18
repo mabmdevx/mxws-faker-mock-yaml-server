@@ -83,6 +83,8 @@ app.route('/api2/status').get(getStatus);
 
 app.get('/api2/resources/files', (req, res) => {
 
+    logger.info("/api2/resources/files - API called.");
+
     const directoryPath = process.env.MYS_RESOURCES_PATH;
 
     const mysResources = [];
@@ -100,6 +102,8 @@ app.get('/api2/resources/files', (req, res) => {
             }
         });
 
+        logger.verbose("Resource Files: " + JSON.stringify(mysResources));
+
         res.status(200).json(mysResources);
     
     });
@@ -107,6 +111,8 @@ app.get('/api2/resources/files', (req, res) => {
 });
 
 app.post('/api2/resources/upload', (req, res) => {
+
+    logger.info("/api2/resources/upload - API called.");
 
     var form = new formidable.IncomingForm();
 
