@@ -77,6 +77,6 @@ docker tag $docker_name $docker_name:$docker_image_tag
 echo "Docker Image tagged: $docker_name:$docker_image_tag"
 
 # Save Docker Image to tar file
-docker save "$docker_name:$docker_image_tag" | pigz > "docker_builds/$tarfile"
-echo "App Version: $app_version | Node Version: $node_version | Docker Image Tag: $docker_image_tag | Timestamp: $timestamp" > docker_builds/docker_image_info.txt
-echo "Docker Image stored in docker_builds/$tarfile"
+docker save "$docker_name:$docker_image_tag" | pigz > "docker_dist/$tarfile"
+echo "App Version: $app_version | Node Version: $node_version | Docker Image Tag: $docker_image_tag | Timestamp: $timestamp" > docker_dist/docker_image_info.txt
+echo "Docker Image stored in docker_dist/$tarfile"
